@@ -1,4 +1,14 @@
-import { dataAtualizada } from "../const/consts"
+export enum USER_ROLES {
+    NORMAL = "NORMAL",
+    ADMIN = "ADMIN"
+}
+
+export interface TokenPayload {
+    id: string,
+    name: string,
+    role: USER_ROLES
+}
+
 
 export interface USerDB {
     id: string,
@@ -9,11 +19,11 @@ export interface USerDB {
     created_at: string
 }
 
+
 export interface UserModel {
     id: string,
     name: string,
     email: string,
-    password: string,
     role: string,
     createdAt: string
 }
@@ -93,7 +103,6 @@ export class User {
             id: this.id,
             name: this.name,
             email: this.email,
-            password: this.password,
             role: this.role,
             createdAt: this.createdAt
 

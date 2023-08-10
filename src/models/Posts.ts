@@ -1,4 +1,4 @@
-export interface VideoDB {
+export interface PostDB {
     id: string,
     creator_id: string,
     content: string,
@@ -14,7 +14,7 @@ export interface LikesDislikesDB {
     likes: number
 }
 
-export interface VideoModel {
+export interface PostModel {
     id: string,
     content: string,
     likes: number,
@@ -27,7 +27,7 @@ export interface VideoModel {
     }
 }
 
-export class Video {
+export class Post {
     constructor(
         private id: string,
         private creatorId: string,
@@ -103,7 +103,7 @@ export class Video {
         this.updateAt = value
     }
 
-    public toVideoDB(): VideoDB {
+    public toPostDB(): PostDB {
         return {
             id: this.id,
             content: this.content,
@@ -116,7 +116,7 @@ export class Video {
         }
     }
 
-    public toVideoModel(): VideoModel {
+    public toPostModel(): PostModel {
         return {
             id: this.id,
             content: this.content,
