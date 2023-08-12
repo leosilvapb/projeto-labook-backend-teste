@@ -1,9 +1,12 @@
 import { z } from "zod";
+import { PostModel } from "../../models/Posts";
 
-export interface GetVideosInputDTO { }
+export interface GetPostInputDTO {
+    token: string
+}
 
-export interface GetVideosOutputDTO { }
+export type GetPostOutputDTO = PostModel[]
 
-export const getVideosSchema = z.object({
-
+export const getPostSchema = z.object({
+    token: z.string().min(1)
 })
